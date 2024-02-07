@@ -1,0 +1,40 @@
+env:
+  expert_policy_file: ../../../hw1/roble/policies/experts/Ant.pkl
+  expert_data: ../../../hw1/roble/expert_data/expert_data_Ant-v2.pkl
+  expert_unlabelled_data: ../../../hw1/roble/expert_data/unlabelled/unlabelled_data_Ant-v2.pkl
+  exp_name: bob
+  env_name: Ant-v2
+  max_episode_length: 1000
+  render: true
+alg:
+  num_rollouts: 5
+  train_idm: false
+  do_dagger: false
+  num_agent_train_steps_per_iter: 1000
+  num_idm_train_steps_per_iter: 10000
+  n_iter: 1
+  batch_size: 1000
+  eval_batch_size: 2000
+  train_batch_size: 100
+  learning_rate: 0.005
+  max_replay_buffer_size: 1000000
+  use_gpu: false
+  gpu_id: 0
+  discrete: false
+  ac_dim: 0
+  ob_dim: 0
+  network:
+    layer_sizes:
+    - 64
+    - 32
+    activations:
+    - tanh
+    - tanh
+    output_activation: identity
+logging:
+  video_log_freq: 5
+  scalar_log_freq: 1
+  save_params: true
+  logdir: c:\Users\Youssef\Downloads\ass1\data\q1_bob_Ant-v2_04-02-2024_01-26-54
+  random_seed: 1234
+  exp_name: q1_bob_Ant-v2_04-02-2024_01-26-54
