@@ -1,0 +1,40 @@
+env:
+  expert_policy_file: ../../../hw1/roble/policies/experts/Humanoid.pkl
+  expert_data: ../../../hw1/roble/expert_data/expert_data_Humanoid-v2.pkl
+  expert_unlabelled_data: ../../../hw1/roble/expert_data/unlabelled/unlabelled_data_Humanoid-v2.pkl
+  exp_name: Humanoid-dag
+  env_name: Humanoid-v2
+  max_episode_length: 1000
+  render: true
+alg:
+  num_rollouts: 5
+  train_idm: false
+  do_dagger: true
+  num_agent_train_steps_per_iter: 1000
+  num_idm_train_steps_per_iter: 10000
+  n_iter: 5
+  batch_size: 1000
+  eval_batch_size: 2000
+  train_batch_size: 100
+  learning_rate: 0.05
+  max_replay_buffer_size: 1000000
+  use_gpu: false
+  gpu_id: 0
+  discrete: false
+  ac_dim: 0
+  ob_dim: 0
+  network:
+    layer_sizes:
+    - 64
+    - 32
+    activations:
+    - tanh
+    - tanh
+    output_activation: identity
+logging:
+  video_log_freq: 5
+  scalar_log_freq: 1
+  save_params: true
+  logdir: /teamspace/studios/this_studio/ass1/hw1/data/q2_Humanoid-dag_Humanoid-v2_07-02-2024_00-45-14
+  random_seed: 1234
+  exp_name: q2_Humanoid-dag_Humanoid-v2_07-02-2024_00-45-14
